@@ -1,0 +1,38 @@
+<html xml:lang='en' lang='en'>
+  <head>
+    <meta charset='UTF-8' /><meta name='viewport' content='width=device-width, height=device-height, initial-scale:1' />
+    <title>Test Template</title>
+    <script type='text/javascript' src='script.js'></script>
+  </head>
+<body>
+    <form name="myform" id="form">
+  <input type='text' id='reverseString'></input>
+  <br>
+  Output: <label id="outputString"></label>
+  <br>
+    <input type="submit" value="Reverse"/>
+    <input id='undoredo' type='button' value='Undo/Redo' />
+    <!-- <input id='redo' type='button' value='redo' /> -->
+    <input id='save' type='hidden' value='save' />
+</form>
+  <script>
+function reverseString() {
+    var s = document.getElementById('reverseString').value;
+    var reversed = '';
+
+    for (var i = s.length - 1; i >= 0; i--) {
+        reversed += s[i];
+    }
+    
+    document.getElementById('outputString').innerHTML = reversed;
+}
+
+function submit(ev) {
+    ev.preventDefault();
+    reverseString();
+    console.log('kontol');
+}
+document.getElementById('form').addEventListener('submit', submit);
+  </script>
+</body>
+</html>
